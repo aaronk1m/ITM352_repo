@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="products-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Products</title>
+    <p style="text-align: center; font-weight: bold;">
+        Hits:<span id="hits_span">0</span>
+        Spins:<span id="spins_span">0</span>
+        Hit/Spin:<span id="hit_spin_span">0</span>
+        </p>
+<script>
+    const store_name = "Aaron Kim"; 
+    let hits = 0;
+    let spins = 1; 
+    let first_name = "Aaron";
+    let last_name = "Kim";
+    let initial1 = first_name.charAt(0);
+    let initial2 = last_name.charAt(0);
+        
+</script>
+
+</head>
+<header>
+    
+    <h1>
+        <p><h1><script>document.write(first_name+" "+last_name+"'s")</script></h1></p>
+        <h1>Used Smartphone Store</h1>
+<script>
+    s_name.innerHTML=store_name
+</script>
+    </h1>
+    
+    
+</header>
+<body onload="hits_span.innerHTML = hits; spins_span.innerHTML = spins;">
+    
+    <div><main>
+        <section class="item"onmouseover="this.className = 'item rotate';spins=spins+1; spins_span.innerHTML = spins; hit_spin_span.innerHTML=(hits/spins).toFixed(2);"
+        onclick="this.className = 'item';hits=hits+1; hits_span.innerHTML = hits; hit_spin_span.innerHTML=(hits/spins).toFixed(2);">
+            
+        <h2>HTC</h2>
+        <p>&dollar;40.00</p>
+        <image src=http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg></image>
+    </section>
+    <section class="item"onmouseover="this.className = 'item rotate';spins=spins+1; spins_span.innerHTML = spins; hit_spin_span.innerHTML=(hits/spins).toFixed(2);"
+        onclick="this.className = 'item';hits=hits+1; hits_span.innerHTML = hits; hit_spin_span.innerHTML=(hits/spins).toFixed(2);">
+        
+        <h2>Apple</h2>
+        <p>&dollar;75.00</p>
+        <image src=http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg></image>
+    </section>
+    <section class="item"onmouseover="this.className = 'item rotate';spins=spins+1; spins_span.innerHTML = spins; hit_spin_span.innerHTML=(hits/spins).toFixed(2);"
+        onclick="this.className = 'item';hits=hits+1; hits_span.innerHTML = hits; hit_spin_span.innerHTML=(hits/spins).toFixed(2);">
+        
+        <h2>Nokia</h2>
+        <p>&dollar;35.00</p>
+        <image src=http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg></image>
+    </section>
+    <section class="item"onmouseover="this.className = 'item rotate';spins=spins+1; spins_span.innerHTML = spins; hit_spin_span.innerHTML=(hits/spins).toFixed(2);"
+        onclick="this.className = 'item';hits=hits+1; hits_span.innerHTML = hits; hit_spin_span.innerHTML=(hits/spins).toFixed(2);">
+        
+        <h2>Samsung</h2>
+        <p>&dollar;45.00</p>
+        <image src= http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg></image>
+    </section>
+    <section class="item"onmouseover="this.className = 'item rotate';spins=spins+1; spins_span.innerHTML = spins; hit_spin_span.innerHTML=(hits/spins).toFixed(2);"
+        onclick="this.className = 'item';hits=hits+1; hits_span.innerHTML = hits; hit_spin_span.innerHTML=(hits/spins).toFixed(2);">
+        <h2>Blackberry</h2>
+        <p>&dollar;10.00</p>
+        <image src=http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg></image>
+    </section>
+
+</main></div>
+</body>
+<footer>
+    <h2>
+        <script>
+    const line = 1;
+    const line2 = 2;
+    const line3 = 3;
+    const now = new Date();
+
+    document.write(`
+        <table border="1" style="margin-left: auto; margin-right: auto; text-align: center;">
+    <tbody>
+    <tr><th colspan="2"><h1>Your One Stop For Used Phones - ${first_name[0]}. ${last_name[0]}'s</h1></th></tr>
+    <tr><td>${line}</td><td><br />Copyright @ ${first_name} ${last_name}</td></tr>
+    <tr><td>${line2}</td><td>${now.getFullYear()}</td></tr>
+    <tr><td>${line3}</td><td>${((now.getHours() + 11) % 12 + 1)}:${(now.getMinutes())} ${((now.getHours() < 12)?'AM':'PM')}</td></tr>
+    <tbody>
+</table>
+`);
+        </script>
+    </h2>
+</footer>
+</html>
