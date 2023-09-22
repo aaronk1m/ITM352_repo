@@ -4,7 +4,7 @@ let fav_num=7;
 let day_of_birth=2;
 let month_of_birth=12;
 
-//define calculation
+//Do two calculations with same variables using different precedence to show how procedence works
 let calc1 = age + fav_num / day_of_birth * month_of_birth;
 let calc2 = (age + fav_num) / day_of_birth * month_of_birth;
 
