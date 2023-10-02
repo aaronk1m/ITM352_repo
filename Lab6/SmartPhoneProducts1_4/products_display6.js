@@ -62,7 +62,8 @@ else {
 else {
     progress = 'Get going!' ;
     */
-//ChatGPT Part 4 of 6
+
+//ChatGPT
 if (hits_spins_ratio >= 0.5 && hits < spins) {
     progress = 'You win!';
 } else if (hits_spins_ratio >= 0.25) {
@@ -124,7 +125,7 @@ else {
 } else {
     progress = 'Get going!' ;
 }*/
-//ChatGPT Part 5 of 6
+//ChatGPT 
 if (hits_spins_ratio >= 0.5 && hits < spins) {
     progress = 'You win!';
 } else if (hits_spins_ratio >= 0.25) {
@@ -137,6 +138,7 @@ if (hits_spins_ratio >= 0.5 && hits < spins) {
 win_span.innerHTML = progress;
 }
 
+//My table stuff
 const line = 1;
 const line2 = 2;
 const line3 = 3;
