@@ -4,22 +4,22 @@ let result=document.getElementById("result");
 document.querySelector('button').addEventListener('click', function () {
     let month=monthIn.value.toLowerCase();
 
-    let days = -1;
+    let num_days = -1;
 
     switch(month) {
         default:
-            days=-1;
+            num_days=-1;
             break;
         
         case "february":
-            days=28;
+            num_days=28;
             break;
         
         case "april":
         case "june":
         case "september":
         case "november":
-            days=30;
+            num_days=30;
             break;
 
         case "january":
@@ -29,14 +29,14 @@ document.querySelector('button').addEventListener('click', function () {
         case "august":
         case "october":
         case "december":
-            days=31;
+            num_days=31;
             break;
     }
 
-    if (days == -1) {
-        result.textContent = 'Not a Month, please enter the name of a Month';
+    if (num_days == -1) {
+        result.textContent = 'Invalid month. Please enter a valid month name.';
     } else {
-        result.textContent = `There are ${days} days in ${month}.`;
+        result.textContent = `There are ${num_days} days in ${month}.`;
     }
 }
 );
