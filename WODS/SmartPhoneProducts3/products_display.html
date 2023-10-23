@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
-    <title>Smartphone Products</title>
+    <title>Smartphone Products 3</title>
+    <p style="text-align: center; font-weight: bold;">
+        Hits:<span id="hits_span">0</span>
+        Spins:<span id="spins_span">0</span>
+        Hit/Spin:<span id="hit_spin_span">0</span><br>
+        You win:<span id="win_span">pending...</span>
+    </p>
     <link rel="stylesheet" type="text/css" href="products-style.css">
-    <script src="./products_data.js"></script>
+    
 </head>
 <body>
-    <h1>Aaron's Used Smart Phone Store</h1>
-    <div><main>
-<script>
-    for (i = 0; i < products.length; i++) {
-    document.write(`
-    <section class="item">
-        <h2>${products[i].brand}</h2>
-        <p>$${products[i].price}</p>
-        <img src = ${products[i].image}>;
-    </section>`)
-    }
-</script>
     
-</main></div>
-<h1>Your One Stop Phone Shop</h1>
+    <h1><span id="top_title"></span></h1>
+    <div>
+        <main class="main">
+            
+
+        </main>
+    </div>
+    
 </body>
+<footer>
+    <h1><span id="bottom_title"></span></h1>
+</footer>
+<script src="products_display.js"></script>
+<script>
+for(let i=0; i < products.length; i++){
+
+    document.querySelector('main').innerHTML += `<section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this);">
+    <h2>${products[i].brand}</h2>
+    <p>${products[i].price}</p>
+    <img src=${products[i].image} />
+    </section>
+    `;
+
+}
+</script>
 </html>

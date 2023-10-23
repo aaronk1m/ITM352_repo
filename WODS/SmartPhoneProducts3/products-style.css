@@ -1,28 +1,48 @@
-div {
-  background-image: url("https://dport96.github.io/ITM352/morea/030.ui-basics/phone_globe.jpg");
+/* General */
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+h1, h2 { 
+  text-align: center;
+}
+
+/* Block Styling */
+
+body > div {
   border: 5px solid black;
   display: flex;
 }
+
+/*  Form Styling */
+
 main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  background-image: url("https://dport96.github.io/ITM352/morea/030.ui-basics/phone_globe.jpg");
 }
-body {
-  width: 800px; margin: 0 auto;    
+
+/* Styling The Products Display */
+
+.item img {
+    width: 200px;
+    height: 200px; 
+    
 }
-h1 {
-  text-align: center;
+.rotate img
+{
+animation: rotation .3s infinite linear;
 }
-h2 {
-  text-align: center;
-  background-color: wheat;
+
+@keyframes rotation {
+from {
+  transform: rotate(0deg);
 }
-p {
-  background-color: white;
-  font-weight: bold;
+to {
+  transform: rotate(359deg);
 }
-img {
-  width: 200px;
-  height: 200px;
 }
