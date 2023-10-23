@@ -66,7 +66,7 @@ download(url, process);
 
 
 
-//Bonus Task 
+//BONUS 
 function calculateTax(monthly_sales, tax_rate) {
     if (typeof tax_rate !== 'number' || tax_rate < 0) {
         throw new Error('Tax rate must be a non-negative number');
@@ -78,7 +78,7 @@ function calculateTax(monthly_sales, tax_rate) {
     return tax_owing;
 }
 
-//Example usage:
+//Example:
 const monthly_sales = [1000, 2000, 1500, 2500];
 const tax_rate = 0.04; //The 4% tax rate
 
