@@ -1,19 +1,15 @@
-function updateQuantityMessage(textbox) {
-    let quantityMessage = document.getElementById('qty_textbox_message');
-
-    //Validate quantity entered
-    let validationMessage = validateQuantity(Number(textbox.value));
-
-    //If there happens to be validation errors, then display the error message
-    if (validationMessage !== "") {
-        quantityMessage.innerHTML = validationMessage;
+function formSubmission() {
+    //Value from form textbox then converting to number, and then assign to something very easy to type
+    let quantity = Number(document.querySelector('input[name="qty_textbox"]').value);
+    
+    let validationMessage = validateQuantity(quantity);
+    if (validationMessage !=="") {
+        document.getElementById("invalidQuantity").innerHTML = validationMessage;
     } else {
-        quantityMessage.innerHTML = textbox.value;
+        window.location.href = `display_purchase.html?qty_textbox=${quantity}`;
     }
-    }
-
-
-
+    return false; //This prevents form submission
+}
 
 function validateQuantity(quantity) {
     let errorMessage = "";
@@ -22,18 +18,19 @@ function validateQuantity(quantity) {
         case isNaN(quantity):
         errorMessage = "Not a number. Please enter a non-negative quantity to order.";
         break;
-        case quantity <= 0 && !Number.isInteger(quantity):
+        case quantity < 0 && !Number.isInteger(quantity):
         errorMessage = "Negative inventory and not an Integer. Please enter a non-negative quantity to order.";
         break;
-        case quantity <= 0:
+        case quantity < 0:
         errorMessage = "Negative inventory. Please enter a non-negative quantity to order.";
         break;
         case !Number.isInteger(quantity):
         errorMessage = "Not an Integer. Please enter a non-negative quantity to order.";
         break;
         default:
-            errorMessage = ""; //There are no errors
+            errorMessage = ""; //There is no errors
             break;
     }
     return errorMessage;
+
 }
