@@ -1,0 +1,32 @@
+[
+	{
+		"model": "Apple iPhone 15 Pro Max",
+		"price": 1199.00,
+		"image": "Apple15.jpg",
+		"qty_available": 10
+	},
+	{
+		"model": "Samsung Galaxy Z Flip5",
+		"price": 999.99,
+		"image": "SamsungZFlip",
+		"qty_available": 15
+	},
+    {
+		"model": "Apple iPhone 15 Pro Max",
+		"price": 1199.00,
+		"image": "Apple15.jpg",
+		"qty_available": 10
+	},
+    {
+		"model": "Apple iPhone 15 Pro Max",
+		"price": 1199.00,
+		"image": "Apple15.jpg",
+		"qty_available": 20
+	},
+    {
+		"model": "Apple iPhone 15 Pro Max",
+		"price": 1199.00,
+		"image": "Apple15.jpg",
+		"qty_available": 5
+	}
+]
