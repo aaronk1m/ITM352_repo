@@ -1,4 +1,4 @@
-//<-----------Aaron Kim--------->\\
+//Aaron Kim
 //This set of code initilizaies the variables
 let extendedPrices = [];
 let extendedPrice = 0;

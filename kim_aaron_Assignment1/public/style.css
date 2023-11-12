@@ -1,16 +1,16 @@
 .custom-gray-bg {
-    background-color: rgb(176, 180, 175);
+    background-color: rgb(255, 255, 255);
   }
   
   .name-img{
   
     width: 250px;
-    height: 150px;
+    height: 250px;
   }
   
   .img-invoice{
-    width: 100px;
-    height: 150px;
+    width: 60px;
+    height: 60px;
   }
   
   .btn-outline-primary {

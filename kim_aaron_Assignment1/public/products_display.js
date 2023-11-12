@@ -1,3 +1,4 @@
+//Aaron Kim
 //This sets up the params from headder, order array, error value
 let params = (new URL(document.location)).searchParams;
 let error;
@@ -17,7 +18,7 @@ params.forEach((value,key) => {
 //If there is an error submitted, then it shows the error text 
 if(error == 'true'){
     
-    document.getElementById('errorDiv').innerHTML += `<h2 class="text-danger">Input Error - Please Fix!</h2><br>`;
+    document.getElementById('errorDiv').innerHTML += `<h3 class="text-danger">Please enter a valid quantity!</h3><br>`;
 }
 
 
@@ -53,7 +54,7 @@ for (let i = 0; i < products.length; i++) {
         document.getElementById(`invalidQuantity${quantity.id}`).innerHTML = "validationMessage";
         //console.log(products[quantity.id]['qty_available']);
         //This gets validation message if not a number, negative, not an integer, or if there is not enough items in stock
-        //Else  empty string 
+        //Else empty string 
         if(isNaN(quantityNumber)){
             valMessage = "Please Enter a Number";
         }else if (quantityNumber<0 && !Number.isInteger(quantityNumber)){

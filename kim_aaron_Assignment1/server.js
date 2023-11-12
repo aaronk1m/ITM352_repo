@@ -1,3 +1,4 @@
+//Aaron Kim
 // Importing the Express.js framework 
 const express = require('express');
 // Create an instance of the Express application called "app"
@@ -73,7 +74,7 @@ app.post("/process_form", function (request, response) {
     if(valid == false)
     {
        
-        response.redirect(`store.html?error=true` + url);
+        response.redirect(`products_display.html?error=true` + url);
         
         
     }

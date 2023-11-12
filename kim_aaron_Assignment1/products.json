@@ -1,39 +1,39 @@
 [
 	{
-		"name": "Nike Soccer Cleat",
+		"name": "Nike",
 		"price": 250.00,
-		"image": "./images/nikecleat.png",
+		"image": "./images/nike.png",
 		"qty_available": 40
 	},
 	{
-		"name": "Adidas Soccer Cleat",
+		"name": "Adidas",
 		"price": 250.00,
-		"image": "./images/adidascleat.png",
+		"image": "./images/adidas.png",
 		"qty_available": 20
 	},
     {
-		"name": "Puma Soccer Cleat",
+		"name": "Puma",
 		"price": 275.00,
-		"image": "./images/pumacleat.png",
+		"image": "./images/puma.png",
 		"qty_available": 30
 	},
     {
-		"name": "Mizuno Soccer Cleat",
-		"price": 350.20,
-		"image": "./images/mizunocleat.png",
+		"name": "Mizuno",
+		"price": 350.00,
+		"image": "./images/mizuno.png",
 		"qty_available": 10
 	},
     {
-		"name": "New Balance Soccer Cleat",
+		"name": "New Balance",
 		"price": 300.00,
-		"image": "./images/newbalancecleat.png",
+		"image": "./images/newbalance.png",
 		"qty_available": 35
 	},
 	{
-		"name": "Signed Messi Shirt (Only 1)",
-		"price": 10000.00,
-		"image": "./images/messi.png",
-		"qty_available": 1
+		"name": "Umbro",
+		"price": 200.00,
+		"image": "./images/umbro.png",
+		"qty_available": 15
 	}
     
 ]
