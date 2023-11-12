@@ -1,32 +1,39 @@
 [
 	{
-		"model": "Apple iPhone 15 Pro Max",
-		"price": 1199.00,
-		"image": "Apple15.jpg",
-		"qty_available": 10
+		"name": "Nike Soccer Cleat",
+		"price": 250.00,
+		"image": "./images/nikecleat.png",
+		"qty_available": 40
 	},
 	{
-		"model": "Samsung Galaxy Z Flip5",
-		"price": 999.99,
-		"image": "SamsungZFlip",
-		"qty_available": 15
-	},
-    {
-		"model": "Apple iPhone 15 Pro Max",
-		"price": 1199.00,
-		"image": "Apple15.jpg",
-		"qty_available": 10
-	},
-    {
-		"model": "Apple iPhone 15 Pro Max",
-		"price": 1199.00,
-		"image": "Apple15.jpg",
+		"name": "Adidas Soccer Cleat",
+		"price": 250.00,
+		"image": "./images/adidascleat.png",
 		"qty_available": 20
 	},
     {
-		"model": "Apple iPhone 15 Pro Max",
-		"price": 1199.00,
-		"image": "Apple15.jpg",
-		"qty_available": 5
+		"name": "Puma Soccer Cleat",
+		"price": 275.00,
+		"image": "./images/pumacleat.png",
+		"qty_available": 30
+	},
+    {
+		"name": "Mizuno Soccer Cleat",
+		"price": 350.20,
+		"image": "./images/mizunocleat.png",
+		"qty_available": 10
+	},
+    {
+		"name": "New Balance Soccer Cleat",
+		"price": 300.00,
+		"image": "./images/newbalancecleat.png",
+		"qty_available": 35
+	},
+	{
+		"name": "Signed Messi Shirt (Only 1)",
+		"price": 10000.00,
+		"image": "./images/messi.png",
+		"qty_available": 1
 	}
+    
 ]

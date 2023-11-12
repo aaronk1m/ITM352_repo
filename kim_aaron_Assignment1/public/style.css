@@ -1,0 +1,35 @@
+.custom-gray-bg {
+    background-color: rgb(176, 180, 175);
+  }
+  
+  .name-img{
+  
+    width: 250px;
+    height: 150px;
+  }
+  
+  .img-invoice{
+    width: 100px;
+    height: 150px;
+  }
+  
+  .btn-outline-primary {
+    
+      color: #000000;
+      background-color: #ffffff;
+      border-color: #726666;
+  
+  
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #2b2824;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+
+  .container img {
+    /*object-fit: contain;*/
+   
+    object-fit: cover; 
+  } 
