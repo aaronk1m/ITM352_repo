@@ -64,7 +64,7 @@ for (let i = 0; i < products.length; i++) {
         }else if(!Number.isInteger(quantityNumber)){
             valMessage = "Please Enter an Integer";
         }else if(quantityNumber > products[quantity.id]['qty_available']){
-            valMessage = "Not Enough Items in Stock!";
+            valMessage = "Not Enough Items in Stock";
         }
         else{
             valMessage = '';

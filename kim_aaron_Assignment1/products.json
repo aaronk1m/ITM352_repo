@@ -1,13 +1,13 @@
 [
 	{
 		"name": "Nike",
-		"price": 250.00,
+		"price": 300.00,
 		"image": "./images/nike.png",
 		"qty_available": 40
 	},
 	{
 		"name": "Adidas",
-		"price": 250.00,
+		"price": 300.00,
 		"image": "./images/adidas.png",
 		"qty_available": 20
 	},
@@ -25,7 +25,7 @@
 	},
     {
 		"name": "New Balance",
-		"price": 300.00,
+		"price": 250.00,
 		"image": "./images/newbalance.png",
 		"qty_available": 35
 	},
