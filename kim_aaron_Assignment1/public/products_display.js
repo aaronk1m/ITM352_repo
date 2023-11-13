@@ -21,19 +21,19 @@ if(error == 'true'){
     document.getElementById('errorDiv').innerHTML += `<h3 class="text-danger">Please enter a valid quantity!</h3><br>`;
 }
 
-
+//Displays product image in loop with bootstrap 4 elements
 for (let i = 0; i < products.length; i++) {
     document.querySelector('.row').innerHTML += 
-        `<div class="col-md-6 product_name mb-4">
+        `<div class="col-md-4 product_name mb-2">
         <div class="name">
             <div class="text-center">
-                <img src="${products[i].image}" class="name-img border-top" alt="Product Image">
+                <img src="${products[i].image}" class="name-img" alt="Product Image">
             </div>
             <div class="name-body">
                 <h5 class="name-title">${products[i].name}</h5>
                 <p class="name-text">
                     Price: $${(products[i].price).toFixed(2)}<br>
-                    Available: ${products[i].qty_available}<br>
+                    In Stock: ${products[i].qty_available}<br>
                     Total Sold: ${products[i].total_sold}
                 </p>
                 
