@@ -23,54 +23,55 @@ app.get("/products.js", function (request, response, next) {
 });
 
 
-//whenever a post with proccess form is recieved
+//Whenever a post with proccess form is recieved
 app.post("/process_form", function (request, response) {
 
-    //get the textbox inputs in an array
+    //It will get the textbox inputs in an array
     let qtys = request.body[`quantity_textbox`];
-    //initially set the valid check to true
+    //Initially set the valid check to true
     let valid = true;
-    //instantiate an empty string to hold the url
+    //Instantiate an empty string to hold the url
     let url = '';
     let soldArray =[];
 
-    //for each member of qtys
+    //..
+    //This is for each member of qtys
     for (i in qtys) {
         
         //set q as the number
         let q = Number(qtys[i]);
         
         //console.log(validateQuantity(q));
-        //if the validate quantity string is empty
+        //If the validate quantity string is empty
         if (validateQuantity(q)=='') {
-            //check if we will go into the negative if we buy this, set valid to false if so
+            //Check if we will go into the negative if we buy this, set valid to false if so
             if(products[i]['qty_available'] - Number(q) < 0){
                 valid = false;
                 url += `&prod${i}=${q}`
             }
-            // otherwise, add to total sold, and subtract from available
+            //Otherwise, add to total sold, and subtract from available
             else{
                
                 soldArray[i] = Number(q);
                 
-                //add argument to url
+                //Add argument to url
                 url += `&prod${i}=${q}`
             }
             
             
         }
-        //if the validate quantity string has stuff in it, set valid to false
+        //If the validate quantity string has stuff in it, set valid to false
          else {
             
             valid = false;
             url += `&prod${i}=${q}`
         }
-        //check if no products were bought, set valid to false if so
+        //Check if no products were bought, set valid to false if so
         if(url == `&prod0=0&prod1=0&prod2=0&prod3=0&prod4=0&prod5=0`){
             valid = false
         }
     }
-    //if its false, return to the store with error=true
+    //If its false, return to the store with error=true
     if(valid == false)
     {
        
@@ -78,12 +79,12 @@ app.post("/process_form", function (request, response) {
         
         
     }
-    //otherwise, redirect to the invoice with the url attached
+    //Otherwise, redirect to the invoice with the url attached
     else{
 
          for (i in qtys)
         {
-            //update total and qty only if everything is good
+            //It will update total and qty only if everything is good
             products[i]['total_sold'] += soldArray[i];
             products[i]['qty_available'] -= soldArray[i];
         }
@@ -103,8 +104,8 @@ app.all('*', function (request, response, next) {
 // Start the server; listen on port 8080 for incoming HTTP requests
 app.listen(8080, () => console.log(`listening on port 8080`));
 
-//function to validate the quantity, returns a string if not a number, negative, not an integer, or a combination of both
-//if no errors in quantity, returns empty string
+//Function to validate the quantity, returns a string if not a number, negative, not an integer, or a combination of both
+//If no errors in quantity, returns empty string
 function validateQuantity(quantity){
     //console.log(quantity);
     if(isNaN(quantity)){

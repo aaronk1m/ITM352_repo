@@ -66,15 +66,15 @@ function validateQuantity(quantity){
 //Generate all the item rows
 function generateItemRows(){
 
-    //This sets table to the invoice table on the invoice.html
-    let table = document.getElementById("invoiceTable");
+//This sets table to the invoice table on the invoice.html
+let table = document.getElementById("invoiceTable");
 
-    //Checks if it has errors
-    //Set to false for now
-    let hasErrors = false; 
+//Checks if it has errors
+//Set to false for now
+let hasErrors = false; 
 
-    //For each member of the array
-    for(let i=0;i<products.length;i++){
+//For each member of the array
+for(let i=0;i<products.length;i++){
         
         //Sets item and itemQuantity from the products array, and the array gotten from the url
         let item = products[i];
@@ -90,19 +90,22 @@ function generateItemRows(){
             row.insertCell(0).insertHTML = item.name;
             row.insertCell(1).innerHTML = validationMessage;
         } 
-        //otherwise, lets create the row in the invoice and update the extended price and subtotal
+        //Otherwise, lets create the row in the invoice and update the extended price and subtotal
         else if(itemQuantity >0){
-            //update the variables
+            //This updates the variables
             extendedPrice = item.price * itemQuantity;
             subtotal += extendedPrice;
 
             //Creates a new row and insert the info
             let row = table.insertRow();
+
+
             row.insertCell(0).innerHTML = `<img src="${item.image}" class="img-invoice" name = "img">`;
             row.insertCell(1).innerHTML = item.name;
             row.insertCell(2).innerHTML = itemQuantity;
             row.insertCell(3).innerHTML = "$" + item.price.toFixed(2);
             row.insertCell(4).innerHTML = "$"+extendedPrice.toFixed(2);
+
 
         }
 
