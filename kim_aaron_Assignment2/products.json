@@ -1,0 +1,39 @@
+[
+	{
+		"name": "NIKE",
+		"price": 300.00,
+		"image": "./images/nike.png",
+		"qty_available": 40
+	},
+	{
+		"name": "ADIDAS",
+		"price": 300.00,
+		"image": "./images/adidas.png",
+		"qty_available": 20
+	},
+    {
+		"name": "PUMA",
+		"price": 275.00,
+		"image": "./images/puma.png",
+		"qty_available": 30
+	},
+    {
+		"name": "MIZUNO",
+		"price": 350.00,
+		"image": "./images/mizuno.png",
+		"qty_available": 10
+	},
+    {
+		"name": "NEW BALANCE",
+		"price": 250.00,
+		"image": "./images/newbalance.png",
+		"qty_available": 35
+	},
+	{
+		"name": "UMBRO",
+		"price": 200.00,
+		"image": "./images/umbro.png",
+		"qty_available": 15
+	}
+    
+]
