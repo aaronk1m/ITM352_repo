@@ -9,7 +9,7 @@ window.onload = function() {
     register_form.elements['email'].value = params.get('email').toLowerCase();
 
     //Get error messages and display them
-    /*for (let i = 0; i <= document.getElementsByClassName('form-group').length; i++) {
+    for (let i = 0; i <= document.getElementsByClassName('form-group').length; i++) {
         let inputName = register_form.elements[i].name;
 
         if (params.has(`${inputName}_length`)) {
@@ -22,7 +22,7 @@ window.onload = function() {
         else if (params.has(`${inputName}_type`)) {
             document.getElementById(`${inputName}_error`).innerHTML = params.get(`${inputName}_type`);
         }
-    }*/
+    }
 }
 
 

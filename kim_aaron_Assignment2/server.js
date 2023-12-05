@@ -3,7 +3,7 @@
 const express = require('express');
 // Importing the crypto module
 const crypto = require('crypto');
-const qs = require ('querystring');
+const qs = require('querystring');
 // Create an instance of the Express application called "app"
 // app will be used to define routes, handle requests, etc
 const app = express();
@@ -25,7 +25,7 @@ app.get("/products.js", function (request, response, next) {
     response.send(products_str);
 });
 
-
+let url = '';
 //Whenever a post with proccess form is recieved
 app.post("/process_form", function (request, response) {
 
@@ -34,7 +34,7 @@ app.post("/process_form", function (request, response) {
     //Initially set the valid check to true
     let valid = true;
     //Instantiate an empty string to hold the url
-    let url = '';
+    //let url = '';
     let soldArray =[];
 
     //..
@@ -184,10 +184,9 @@ app.post('/process_login', (request, response) => {
 
         // Use the entered password and stored salt to create a hash using SHA-256 algorithm
         const enteredHash = crypto.pbkdf2Sync(entered_password, storedSalt, 10000, 512, 'sha256').toString('hex');
-
         // Check if the entered hash matches the stored hash
         if (enteredHash === storedHash) {
-            // If the password is correct, create a temporary user object with the entered email and name
+            // If the password is correct it will then create a temporary user object with the entered email and name
             temp_user['email'] = entered_email;
             temp_user['name'] = user_data[entered_email].name;
 
@@ -196,7 +195,8 @@ app.post('/process_login', (request, response) => {
 
             // Redirect the user to the invoice page with a query parameter indicating success and the temporary user information
             let params = new URLSearchParams(temp_user);
-            response.redirect(`./invoice.html?valid&${params.toString()}`);
+            console.log(params);
+            response.redirect('./invoice.html?valid&' + url + '${params.toString()}');
             return;
         } else {
             // If the entered password is incorrect
@@ -315,7 +315,7 @@ app.post("/process_register", function (request, response) {
             console.log(user_data);
 
             let params = new URLSearchParams(temp_user);
-            response.redirect(`/invoice.html?regSuccess&valid&${params.toString()}`);
+            response.redirect('./invoice.html?regSuccess&valid&' + url + '${params.toString()}');
             }
         });
             
