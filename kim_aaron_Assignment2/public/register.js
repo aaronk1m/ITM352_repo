@@ -1,14 +1,14 @@
-//register.js
+//Aaron Kim Register.js
 let params = (new URL(document.location)).searchParams;
 
 window.onload = function() {
     let register_form = document.forms ['register_form'];
 
-    //Get values previously inputted and place back into input fields
+    //Retrieve and populate the input fields with previously entered values
     register_form.elements['name'].value = params.get('name');
     register_form.elements['email'].value = params.get('email').toLowerCase();
 
-    //Get error messages and display them
+    //Retrieve error messages and present them for display
     for (let i = 0; i <= document.getElementsByClassName('form-group').length; i++) {
         let inputName = register_form.elements[i].name;
 

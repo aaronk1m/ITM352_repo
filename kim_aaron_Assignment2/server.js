@@ -97,14 +97,14 @@ app.post("/process_form", function (request, response) {
     }
  });
 
-// Route all other GET requests to serve static files from a directory named "public"
+//Route all other GET requests to serve static files from a directory named "public"
 
 app.all('*', function (request, response, next) {
     //console.log(request.method + ' to ' + request.path);
     next();
  });
 
-// Start the server; listen on port 8080 for incoming HTTP requests
+//Start the server; listen on port 8080 for incoming HTTP requests
 app.listen(8080, () => console.log(`listening on port 8080`));
 
 //Function to validate the quantity, returns a string if not a number, negative, not an integer, or a combination of both
@@ -125,9 +125,8 @@ function validateQuantity(quantity){
 
 }
 
-//assignmetn 2 shit
+//=Assignment 2 Shenanigans=\\
 
-//------------------------------Assigntment 2-----------------------------//
 // Declare a variable to store user data
 let user_data;
 
@@ -161,7 +160,7 @@ for (let i in products){
 }
 */                         
 
-//===========================App Post Login Form==========================//
+//=App Post Login Form=\\
 // This code block handles a POST request to the '/process_login' endpoint of the app.
 app.post('/process_login', (request, response) => {
     // Retrieve the data from the request body
@@ -177,100 +176,86 @@ app.post('/process_login', (request, response) => {
         return;
     }
 
-    // If the entered email exists in the user_data object
+    //If the entered email exists in the user_data object
     if (user_data[entered_email]) {
-        // Extract the stored password and salt from the stored password string
+        //Extract the stored password and salt from the stored password string
         const [storedSalt, storedHash] = user_data[entered_email].password.split(':');
 
-        // Use the entered password and stored salt to create a hash using SHA-256 algorithm
+        //Utilize the provided password and stored salt to generate a hash using the SHA-256 algorithm
         const enteredHash = crypto.pbkdf2Sync(entered_password, storedSalt, 10000, 512, 'sha256').toString('hex');
-        // Check if the entered hash matches the stored hash
+        //Check if the entered hash matches the stored hash
         if (enteredHash === storedHash) {
-            // If the password is correct it will then create a temporary user object with the entered email and name
+            //If the password is correct it will then create a temporary user object with the entered email and name
             temp_user['email'] = entered_email;
             temp_user['name'] = user_data[entered_email].name;
 
-            // Log the temporary user object
+            //Log the temporary user object
             console.log(temp_user);
 
-            // Redirect the user to the invoice page with a query parameter indicating success and the temporary user information
+            //Redirect the user to the invoice page, appending a query parameter to signal success and including temporary user information
             let params = new URLSearchParams(temp_user);
             console.log(params);
             response.redirect('./invoice.html?valid&' + url + `${params.toString()}`);
             return;
         } else {
-            // If the entered password is incorrect
+            //If the entered password is incorrect
             request.query.loginError = 'Incorrect password';
         }
     } else {
-        // If the entered email does not exist in the user_data object
+        //If the entered email does not exist in the user_data object
         request.query.loginError = 'Incorrect email';
     }
 
-    // Set the entered email as a query parameter in the request
+    //Set the entered email as a query parameter in the request
     request.query.email = entered_email;
-    // Create a URLSearchParams object with the request query parameters
+    //Create a URLSearchParams object with the request query parameters
     let params = new URLSearchParams(request.query);
-    // Redirect the user back to the login page with the query parameters indicating the login error and the entered email
+    //Direct the user back to the login page, incorporating query parameters to signify the login error and retain the entered email information
     response.redirect(`./login.html?${params.toString()}`);
 });
 
 
-
-
-
-//===========================App Post Continue Shopping==========================//
-// This code block handles a POST request to the '/continue_shopping' endpoint of the app.
+//=App Post Continue Shopping=\\
+//This code block handles a POST request to the '/continue_shopping' endpoint of the app.
 
 app.post("/continue_shopping", function (request, response) {
-    // Create a new URLSearchParams object with the 'temp_user' parameter.
+    //Create a new URLSearchParams object with the 'temp_user' parameter.
     let params = new URLSearchParams(temp_user);
 
-    // Redirect the response to the '/products_display.html' endpoint with the query parameters from the 'params' object.
+    //Direct the response to the '/products_display.html' endpoint, incorporating the query parameters from the 'params' object.
     response.redirect(`/products_display.html?${params.toString()}`);
 })
 
-
-
-
-
-
-//===========================App Post Purchase Logout==========================//
+//=App Post Purchase Logout=\\
 app.post("/purchase_logout", function (request, response) {
-    // Loop through each product in the products array
+    //Loop through each product in the products array
     for (let i in products) {
-        // Increment the quantity sold of the current product by the number specified in the temp_user object
+        //Increase the quantity sold for the current product by the specified number in the 'temp_user' object
         products[i].qty_sold += Number(temp_user[`qty${[i]}`]);
-        // Decrease the available quantity of the current product by the number specified in the temp_user object
+        //Reduce the available quantity of the current product by the specified number in the 'temp_user' object
         products[i].qty_available = products[i].qty_available - Number(temp_user[`qty${[i]}`]);
     }
 
-    // Write the updated products array to the products.json file
+    //Write the updated products array to the products.json file
     fs.writeFile(__dirname + '/products.json', JSON.stringify(products), 'utf-8', (error) => {
         if (error) {
-            // If there's an error while writing the file, log the error message
+            //In case of an error during file writing, log the error message
             console.log('error updating products', error);
         } else {
-            // If the file is written successfully, log a success message
+            //Upon successful file writing, log a message indicating success
             console.log('File written successfully. Products are updated.');
         }
     });
 
-    // Remove the 'email' and 'name' properties from the temp_user object
+    //Delete the 'email' and 'name' properties from the 'temp_user' object
     delete temp_user['email'];
     delete temp_user['name'];
 
-    // Redirect the user to the products_display.html page
+    //Redirect the user to the products_display.html page
     response.redirect('./products_display.html');
 })
 
-
-
-
-
-
-
-//==============================App Post Register Form==========================//
+//=App Post Register Form=\\
 //Declare registration errors
 let registration_errors = {};
 
@@ -300,7 +285,7 @@ app.post("/process_register", function (request, response) {
         //Write the updated user_data object to the user_data.json file
         fs.writeFile(__dirname + '/user_data.json', JSON.stringify(user_data), 'utf-8', (error) => {
             if (error) {
-                //If there's an error while writing the file, log the error message
+                //In the event of an error during file writing, log the corresponding error message
                 console.log('error updating user_data', error);
             } else {
                 //If the file is written successfully, log a success message
@@ -320,7 +305,7 @@ app.post("/process_register", function (request, response) {
         });
             
         
-    }else { //If there are errors
+    }else { //If there could be errors
         delete request.body.password;
         delete request.body.confirm_password;
 
@@ -337,30 +322,30 @@ function validateConfirmPassword(password, confirm_password) {
     }
 }
 
-// Encrypt Password Function
+//Encrypt Password Function
 function encryptPassword(password) {
-    // Generate a random salt for each user
+    //Generate a random salt for each user
     const salt = crypto.randomBytes(16).toString('hex');
-    // Use the password and salt to create a hash using SHA-256 algorithm
+    //Employ the password and salt to generate a hash utilizing the SHA-256 algorithm
     const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha256').toString('hex');
-    // Store both the salt and hash in the database
+    //Store both the salt and hash in the database
     return `${salt}:${hash}`;
 }
 
-// Validate Password Function
+//Validate Password Function
 function validatePassword(password) {
     if (password.length < 10 || password.length > 16) {
         registration_errors.password_error = "Password must be between 10 and 16 characters.";
     } else if (/\s/.test(password)) {
-        registration_errors.password_error = "Password cannot contain spaces.";
+        registration_errors.password_error = "Password must not contain spaces.";
     }
-    // Add more password validation rules as needed
+    //Incorporate additional password validation rules as required in the section below if need be
 }
 
 
-// Validate Email Function
+//Validate Email Function
 function validateEmail(email) {
-    // Basic email validation using a regular expression
+    //Implement basic email validation using a regular expression
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         registration_errors.email_error = "Invalid email format.";
@@ -369,7 +354,7 @@ function validateEmail(email) {
 
 //Validate Name
 function validateName(name) {
-    // Basic name validation using a regular expression
+    //Basic name validation using a regular expression
     const nameRegex = /^[a-zA-Z\s]+$/;
     if (!nameRegex.test(name)) {
         registration_errors.name_error = "Invalid name format.";
