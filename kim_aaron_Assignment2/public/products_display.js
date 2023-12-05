@@ -18,7 +18,7 @@ params.forEach((value,key) => {
 //If there is an error submitted, then it shows the error text 
 if(error == 'true'){
     
-    document.getElementById('errorDiv').innerHTML += `<h3 class="text-danger">PLEASE ENTER A VALID QUANTITY</h3><br>`;
+    document.getElementById('errorDiv').innerHTML += `<h3 class="text-danger">Please enter a valid quantity!</h3><br>`;
 }
 
 //Displays product image in loop with bootstrap 4 elements
