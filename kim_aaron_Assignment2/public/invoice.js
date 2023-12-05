@@ -17,8 +17,8 @@ let params = (new URL(document.location)).searchParams;
                 }
         });
 
-        //console.log(order);
-        
+        console.log(params.get('name'));
+
 //This generates all the item rows
 generateItemRows();
 
@@ -46,6 +46,7 @@ document.getElementById("subtotal_cell").innerHTML = "$" + subtotal.toFixed(2);
 document.getElementById("tax_cell").innerHTML = "$" + tax.toFixed(2);
 document.getElementById("shipping_cell").innerHTML = "$"+shipping.toFixed(2);
 document.getElementById("total_cell").innerHTML = "$"+total.toFixed(2);
+document.getElementById("invoicename").innerHTML = "Thank you for ordering, " + params.get('name') + "!";
 
 //Validates the quantity, returns a string if not a number, negative, not an integer, or combination of both
 //If no errors in quantity, returns empty string

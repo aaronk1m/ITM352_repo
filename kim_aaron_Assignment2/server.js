@@ -34,7 +34,7 @@ app.post("/process_form", function (request, response) {
     //Initially set the valid check to true
     let valid = true;
     //Instantiate an empty string to hold the url
-    //let url = '';
+    url = '';
     let soldArray =[];
 
     //..
@@ -78,7 +78,7 @@ app.post("/process_form", function (request, response) {
     if(valid == false)
     {
        
-        response.redirect(`products_display.html?error=true` + url);
+        response.redirect(`products_display.html?error=true`);
         
         
     }
@@ -172,7 +172,7 @@ app.post('/process_login', (request, response) => {
     // Check if the entered email and password are empty
     if (entered_email.length == 0 && entered_password.length == 0) {
         // Set an error message indicating that the email and password should be entered
-        response.query.loginError = 'Please enter email and password';
+        request.query.loginError = 'Please enter email and password';
         response.redirect(`./login.html?${qs.stringify(request.query)}`);
         return;
     }
@@ -196,7 +196,7 @@ app.post('/process_login', (request, response) => {
             // Redirect the user to the invoice page with a query parameter indicating success and the temporary user information
             let params = new URLSearchParams(temp_user);
             console.log(params);
-            response.redirect('./invoice.html?valid&' + url + '${params.toString()}');
+            response.redirect('./invoice.html?valid&' + url + `${params.toString()}`);
             return;
         } else {
             // If the entered password is incorrect
@@ -315,7 +315,7 @@ app.post("/process_register", function (request, response) {
             console.log(user_data);
 
             let params = new URLSearchParams(temp_user);
-            response.redirect('./invoice.html?regSuccess&valid&' + url + '${params.toString()}');
+            response.redirect('./invoice.html?regSuccess&valid&' + url + `${params.toString()}`);
             }
         });
             
